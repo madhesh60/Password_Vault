@@ -8,7 +8,7 @@ export default function Login({ onAuth }: { onAuth: (token:string, keySalt:strin
   async function submit(e: any) {
     e.preventDefault();
     setErr('');
-    const res = await fetch((import.meta.env.VITE_API_BASE || import.meta.env.VITE_REACT_APP_BACKEND_URL) + '/auth/login', {
+    const res = await fetch((import.meta.env.VITE_API_BASE || https://password-vault-1-h7oj.onrender.com )+ '/auth/login', {
       method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ email, password })
     });
     const j = await res.json();
