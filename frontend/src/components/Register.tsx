@@ -11,7 +11,7 @@ export default function Register({ onAuth }: { onAuth: (token:string, keySalt:st
     setErr('');
     try {
       const keySalt = await generateKeySalt(); // base64
-      const res = await fetch((import.meta.env.VITE_API_BASE || import.meta.env.VITE_REACT_APP_BACKEND_URL) + '/auth/register', {
+      const res = await fetch((import.meta.env.VITE_API_BASE || https://password-vault-1-h7oj.onrender.com) + '/auth/register', {
         method:'POST', headers:{ 'Content-Type':'application/json' },
         body: JSON.stringify({ email, password, keySalt })
       });
