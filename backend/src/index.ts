@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "https://passwordvault-frontend.onrender.com",
+  origin: "https://password-vault-2-13gs.onrender.com",
   credentials: true,
 }));
 app.use(express.json());
