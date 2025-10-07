@@ -10,7 +10,7 @@ export default function Vault({ token, keySalt, onLogout }:{ token:string, keySa
   const [filter, setFilter] = useState('');
   const [key, setKey] = useState<CryptoKey | null>(null);
   const [loading, setLoading] = useState(false);
-  const API = (import.meta.env.VITE_API_BASE || 'http://localhost:4000');
+  const API = (import.meta.env.VITE_API_BASE || 'https://password-vault-1-h7oj.onrender.com');
 
   useEffect(()=>{
     // ask user for password again to derive key (simple approach)

@@ -8,7 +8,10 @@ import vaultRoutes from './routes/vault';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://passwordvault-frontend.onrender.com",
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use('/auth', authRoutes);
@@ -16,6 +19,10 @@ app.use('/vault', vaultRoutes);
 
 const PORT = process.env.PORT || 4000;
 const MONGO = process.env.MONGO_URI || 'mongodb://localhost:27017/password_vault';
+
+app.get("/test", (req, res) => {
+  res.json({ message: "Backend working fine ✅" });
+});
 
 mongoose.connect(MONGO).then(()=> {
   console.log('Connected to MongoDB');
