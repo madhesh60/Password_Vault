@@ -1,0 +1,221 @@
+:root {
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-light: #3b82f6;
+  --muted: #6b7280;
+  --danger: #ef4444;
+  --border: #e5e7eb;
+}
+
+/* Global */
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: #111;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Center wrapper (for auth screens) */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full height */
+  background: var(--bg); /* same background */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Main card container */
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.08);
+  width: 420px;
+  max-width: 95%;
+}
+
+/* Inputs & Textareas */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--accent-light);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.secondary {
+  background: #efefef;
+  color: #111;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Head section (top bar with title + actions) */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Search box */
+.search {
+  flex: 1;
+  min-width: 200px;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* Controls row (password generator controls, etc.) */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Password generator section */
+.generator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* centers all contents horizontally */
+  align-items: center;       /* aligns vertically */
+  gap: 10px;
+  background: #f9fafb;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.generator:hover {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.generator label,
+.generator small {
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.generator button {
+  background: var(--accent);
+  border: none;
+  padding: 8px 14px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.generator button:hover {
+  background: #1e40af;
+}
+
+
+/* Vault list */
+.list {
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 12px;
+  padding-right: 4px;
+}
+
+/* Vault item */
+.item {
+  padding: 12px;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background: white;
+  transition: box-shadow 0.2s ease;
+}
+
+.item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Small muted text */
+small.muted {
+  color: var(--muted);
+}
+
+/* Active button or tag */
+.active {
+  background: #e5e7eb;
+  color: #000;
+}
+
+/* Scrollbar styling (optional polish) */
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
